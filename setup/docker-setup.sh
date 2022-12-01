@@ -16,7 +16,8 @@ echo \
 sudo apt-get update
 sudo apt-get install docker-ce, docker-compose-plugin
 
-sudo usermod -aG docker ${USER}
-sudo passwd academydataengineer
-su - ${USER}
+
+sudo groupadd -f docker
+sudo usermod -aG docker $USER
+newgrp docker
 groups
