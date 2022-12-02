@@ -8,23 +8,23 @@ cd /etc/nginx/sites-available
 # define new file & rename like your domain
 - touch stag.aktifitasacak.com
 
-# sudo nano stag.aktifitasacak.com
+sudo nano stag.aktifitasacak.com
 # insert this command 
-sudo 'echo "server {
-                     listen 80;
-                     listen [::]:80;
+server {
+       listen 80;
+       listen [::]:80;
 
-                     server_name stag.aktifitasacak.com;
-                     access_log /var/log/nginx/stag.aktifitasacak.com-access.log;
-                     error_log /var/log/nginx/stag.aktifitasacak.com-error.log;
+       server_name stag.aktifitasacak.com;
+       access_log /var/log/nginx/stag.aktifitasacak.com-access.log;
+       error_log /var/log/nginx/stag.aktifitasacak.com-error.log;
 
-                     location / {
-                          proxy_set_header Host $host;
-                          proxy_set_header X-Real-IP $remote_addr;
-                          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                          proxy_pass http://{replace with IP instance}:8080;
-                     }
-              }" >> stag.aktifitasacak.com'
+       location / {
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://{replace with IP instance}:8080;
+       }
+}
 
 sudo nginx -t
 
@@ -43,3 +43,4 @@ sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 sudo certbot --nginx
 sudo systemctl restart nginx
+sudo service nginx configtest && sudo service nginx reload
