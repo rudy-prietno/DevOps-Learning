@@ -1,4 +1,4 @@
-!/bin/bash
+#! /bin/bash
 # This script is intended to setup the environment for a NGINX Web Server with SSL certificate using Let's Encrypt.
 
 
