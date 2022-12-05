@@ -16,3 +16,6 @@ sudo useradd --comment 'GitLab Runner' --create-home gitlab-runner --shell /bin/
 # Install and run as service
 sudo gitlab-runner install --user=gitlab-runner --working-directory=/home/gitlab-runner
 sudo gitlab-runner start
+
+# Register gitlab-runner
+sudo gitlab-runner register --url https://gitlab.com/ --registration-token $REGISTRATION_TOKEN
