@@ -1,6 +1,12 @@
 #! /bin/bash
 # This script is intended to setup the environment for a NGINX Web Server with SSL certificate using Let's Encrypt.
 
+certbot certonly \
+--agree-tos --manual --preferred-challenges dns \
+--email random@aktifitasacak.com \
+--server https://acme-v02.api.letsencrypt.org/directory \
+-d "*.aktifitasacak.com"
+
 
 # install nginx
 install_nginx(){
