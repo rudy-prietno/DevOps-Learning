@@ -7,6 +7,8 @@ certbot certonly \
 --server https://acme-v02.api.letsencrypt.org/directory \
 -d "*.aktifitasacak.com"
 
+https://www.linkedin.com/pulse/wildcard-certificates-using-lets-encrypt-certbot-pallavi-udhane/
+
 
 # install nginx
 install_nginx(){
