@@ -5,7 +5,8 @@ certbot certonly \
 --agree-tos --manual --preferred-challenges dns \
 --email random@aktifitasacak.com \
 --server https://acme-v02.api.letsencrypt.org/directory \
--d "*.aktifitasacak.com"
+-d "*.aktifitasacak.com" \
+-d "*.*.aktifitasacak.com"
 
 https://www.linkedin.com/pulse/wildcard-certificates-using-lets-encrypt-certbot-pallavi-udhane/
 
